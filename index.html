@@ -90,11 +90,20 @@
         
         <h4>📝 SAJÁT KÓDOK - 3. Angular függvény</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 3.
-// Példá: http kérés, vagy adatfeldolgozás
-// 
-// 
-// Írd ide a kódodat</pre>
+            <pre>          http.request({
+            url: './php/put.php',
+            data: {id: $scope.currendModifyId,
+                    ...$scope.model}
+          })
+          .then(res => {
+            console.log(res)
+            if(res.affectedRows)
+              alert("Sikeres Művelet");
+            else
+              alert("Sikertelen művelet");
+
+            getData();
+          })</pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 4. Angular függvény</h4>
