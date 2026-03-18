@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Vizsga kódgyűjtemény - Saját kódokkal</title>
+    <title>Vizsga kódgyűjtemény - Példa Kódkal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background: #1e1e1e; color: #fff; padding: 20px; }
@@ -35,8 +35,8 @@
     <div id="angular" class="tab active">
         <h3>🔷 AngularJS <span class="badge">5 üres hely</span></h3>
         
-        <!-- Előre megírt kódok -->
-        <h4>📌 Előre megírt kódok:</h4>
+        <!-- Kódrészlet -->
+        <h4>📌 Kódrészlet:</h4>
         <pre>angular.module('app', ['ui.router', 'app.common'])
 .config(['$stateProvider', '$urlRouterProvider', function($sp, $url) {
     $sp
@@ -60,7 +60,7 @@
 }]);</pre>
         
         <!-- 5 ÜRES HELY ANGULARHOZ -->
-        <h4>📝 SAJÁT KÓDOK - 1. Angular függvény</h4>
+        <h4>📝 Példa Kód - 1. Angular függvény</h4>
         <div class="empty-slot">
             <pre>
                 ng-model="model.name"
@@ -81,14 +81,14 @@
             </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 2. Angular függvény</h4>
+        <h4>📝 Példa Kód - 2. Angular függvény</h4>
         <div class="empty-slot">
             <pre>
                 $scope.$applyAsync();
             </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 3. Angular függvény</h4>
+        <h4>📝 Példa Kód - 3. Angular függvény</h4>
         <div class="empty-slot">
             <pre>          http.request({
             url: './php/put.php',
@@ -106,7 +106,7 @@
           })</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 4. Angular függvény</h4>
+        <h4>📝 Példa Kód - 4. Angular függvény</h4>
         <div class="empty-slot">
             <pre>$scope.delete = (id) => {
         if (!confirm(`Biztossan törölni szeretné a ${id} filmet?`)) return;
@@ -124,7 +124,7 @@
 </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 5. Angular függvény</h4>
+        <h4>📝 Példa Kód - 5. Angular függvény</h4>
         <div class="empty-slot">
             <pre>// Home controller
   .controller('homeController', [
@@ -158,7 +158,7 @@
     <div id="csharp" class="tab">
         <h3>🎯 C# WPF <span class="badge">5 üres hely</span></h3>
         
-        <h4>📌 Előre megírt kódok:</h4>
+        <h4>📌 Kódrészlet:</h4>
         <pre>using MySql.Data.MySqlClient;
 using System.Data;
 
@@ -182,7 +182,7 @@ public partial class MainWindow : Window
 }</pre>
         
         <!-- 5 ÜRES HELY C#-HOZ -->
-        <h4>📝 SAJÁT KÓDOK - 1. C# metódus</h4>
+        <h4>📝 Példa Kód - 1. C# metódus</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT C# KÓDOD 1.
 // private void SajatFuggveny()
@@ -191,7 +191,7 @@ public partial class MainWindow : Window
 // }</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 2. C# metódus</h4>
+        <h4>📝 Példa Kód - 2. C# metódus</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT C# KÓDOD 2.
 // private void AdatBetoltes()
@@ -200,7 +200,7 @@ public partial class MainWindow : Window
 // }</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 3. C# metódus</h4>
+        <h4>📝 Példa Kód - 3. C# metódus</h4>
         <div class="empty-slot">
             <pre>using System;
 using System.Collections.Generic;
@@ -305,7 +305,7 @@ namespace Tvk
 // </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 4. C# metódus</h4>
+        <h4>📝 Példa Kód - 4. C# metódus</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT C# KÓDOD 4.
 // private void Torles()
@@ -314,7 +314,7 @@ namespace Tvk
 // }</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 5. C# metódus</h4>
+        <h4>📝 Példa Kód - 5. C# metódus</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT C# KÓDOD 5.
 // private void Kereses()
@@ -328,7 +328,7 @@ namespace Tvk
     <div id="sql" class="tab">
         <h3>🗄️ SQL <span class="badge">5 üres hely</span></h3>
         
-        <h4>📌 Előre megírt kódok:</h4>
+        <h4>📌 Kódrészlet:</h4>
         <pre>-- Adatbázis létrehozás
 CREATE DATABASE sajatnev;
 USE sajatnev;
@@ -343,7 +343,7 @@ CREATE TABLE movies (
 );</pre>
         
         <!-- 5 ÜRES HELY SQL-HEZ -->
-        <h4>📝 SAJÁT KÓDOK - 1. SQL lekérdezés</h4>
+        <h4>📝 Példa Kód - 1. SQL lekérdezés</h4>
         <div class="empty-slot">
             <pre>SELECT Users.nev, Orders.termek
 FROM Users
@@ -353,7 +353,7 @@ INNER JOIN Orders ON Users.id = Orders.user_id;
 -- </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 2. SQL lekérdezés</h4>
+        <h4>📝 Példa Kód - 2. SQL lekérdezés</h4>
         <div class="empty-slot">
             <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 2.
 -- 
@@ -361,7 +361,7 @@ INNER JOIN Orders ON Users.id = Orders.user_id;
 -- </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 3. SQL lekérdezés</h4>
+        <h4>📝 Példa Kód - 3. SQL lekérdezés</h4>
         <div class="empty-slot">
             <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 3.
 -- 
@@ -369,7 +369,7 @@ INNER JOIN Orders ON Users.id = Orders.user_id;
 -- </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 4. SQL lekérdezés</h4>
+        <h4>📝 Példa Kód - 4. SQL lekérdezés</h4>
         <div class="empty-slot">
             <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 4.
 -- 
@@ -377,7 +377,7 @@ INNER JOIN Orders ON Users.id = Orders.user_id;
 -- </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 5. SQL lekérdezés</h4>
+        <h4>📝 Példa Kód - 5. SQL lekérdezés</h4>
         <div class="empty-slot">
             <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 5.
 -- 
@@ -390,7 +390,7 @@ INNER JOIN Orders ON Users.id = Orders.user_id;
     <div id="php" class="tab">
         <h3>🐘 PHP <span class="badge">5 üres hely</span></h3>
         
-        <h4>📌 Előre megírt kódok:</h4>
+        <h4>📌 Kódrészlet:</h4>
         <pre>&lt?php
             declare(strict_types=1);
 
@@ -410,7 +410,7 @@ INNER JOIN Orders ON Users.id = Orders.user_id;
         </pre>
         
         <!-- 5 ÜRES HELY PHP-HOZ -->
-        <h4>📝 SAJÁT KÓDOK - 1. PHP fájl</h4>
+        <h4>📝 Példa Kód - 1. PHP fájl</h4>
         <div class="empty-slot">
             <pre>$query = $db-&gtpreparateInsert('movies', array_keys($args));
 
@@ -419,7 +419,7 @@ $result = $db-&gtexecute($query, array_values($args));
 ?&gt;</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 2. PHP fájl</h4>
+        <h4>📝 Példa Kód - 2. PHP fájl</h4>
         <div class="empty-slot">
             <pre>
 $query = $db-&gtpreparateUpdate('movies', array_keys($args), 'id');
@@ -428,14 +428,14 @@ $query .= " WHERE `id` = :id";
 $result = $db-&gtexecute($query, $args);</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 3. PHP fájl</h4>
+        <h4>📝 Példa Kód - 3. PHP fájl</h4>
         <div class="empty-slot">
             <pre>$query = "DELETE FROM movies WHERE id=:id";
 
 $result = $db-&gtexecute($query, $args);</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 4. PHP fájl</h4>
+        <h4>📝 Példa Kód - 4. PHP fájl</h4>
         <div class="empty-slot">
             <pre>&lt?php
 
@@ -460,7 +460,7 @@ $db->execute($query, $data);
 $db = null;</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 5. PHP fájl</h4>
+        <h4>📝 Példa Kód - 5. PHP fájl</h4>
         <div class="empty-slot">
             <pre>&lt;?php
 // IDE JÖN A SAJÁT PHP KÓDOD 5.
@@ -474,7 +474,7 @@ $db = null;</pre>
     <div id="html" class="tab">
         <h3>🌐 HTML/Bootstrap <span class="badge">5 üres hely</span></h3>
         
-        <h4>📌 Előre megírt kódok:</h4>
+        <h4>📌 Kódrészlet:</h4>
         <pre>&lt;!-- Bootstrap grid --&gt;
 &lt;div class="container"&gt;
     &lt;div class="row"&gt;
@@ -485,7 +485,7 @@ $db = null;</pre>
 &lt;/div&gt;</pre>
         
         <!-- 5 ÜRES HELY HTML-HEZ -->
-        <h4>📝 SAJÁT KÓDOK - 1. HTML blokk</h4>
+        <h4>📝 Példa Kód - 1. HTML blokk</h4>
         <div class="empty-slot">
             <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 1. --&gt;
 &lt;!-- 
@@ -493,7 +493,7 @@ $db = null;</pre>
 --&gt;</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 2. HTML blokk</h4>
+        <h4>📝 Példa Kód - 2. HTML blokk</h4>
         <div class="empty-slot">
             <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 2. --&gt;
 &lt;!-- 
@@ -501,7 +501,7 @@ $db = null;</pre>
 --&gt;</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 3. HTML blokk</h4>
+        <h4>📝 Példa Kód - 3. HTML blokk</h4>
         <div class="empty-slot">
             <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 3. --&gt;
 &lt;!-- 
@@ -509,7 +509,7 @@ $db = null;</pre>
 --&gt;</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 4. HTML blokk</h4>
+        <h4>📝 Példa Kód - 4. HTML blokk</h4>
         <div class="empty-slot">
             <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 4. --&gt;
 &lt;!-- 
@@ -517,7 +517,7 @@ $db = null;</pre>
 --&gt;</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 5. HTML blokk</h4>
+        <h4>📝 Példa Kód - 5. HTML blokk</h4>
         <div class="empty-slot">
             <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 5. --&gt;
 &lt;!-- 
@@ -530,7 +530,7 @@ $db = null;</pre>
     <div id="js" class="tab">
         <h3>📜 JavaScript <span class="badge">5 üres hely</span></h3>
         
-        <h4>📌 Előre megírt kódok:</h4>
+        <h4>📌 Kódrészlet:</h4>
         <pre>// Confirm törléshez
 if(confirm("Biztosan?")) {
     // törlés kódja
@@ -542,7 +542,7 @@ fetch('file.json')
     .then(d => console.log(d));</pre>
         
         <!-- 5 ÜRES HELY JS-HEZ -->
-        <h4>📝 SAJÁT KÓDOK - 1. JavaScript függvény</h4>
+        <h4>📝 Példa Kód - 1. JavaScript függvény</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT JS KÓDOD 1.
 // function valami() {
@@ -550,7 +550,7 @@ fetch('file.json')
 // }</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 2. JavaScript függvény</h4>
+        <h4>📝 Példa Kód - 2. JavaScript függvény</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT JS KÓDOD 2.
 // document.addEventListener('...', function() {
@@ -558,7 +558,7 @@ fetch('file.json')
 // });</pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 3. JavaScript függvény</h4>
+        <h4>📝 Példa Kód - 3. JavaScript függvény</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT JS KÓDOD 3.
 // 
@@ -566,7 +566,7 @@ fetch('file.json')
 // </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 4. JavaScript függvény</h4>
+        <h4>📝 Példa Kód - 4. JavaScript függvény</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT JS KÓDOD 4.
 // 
@@ -574,7 +574,7 @@ fetch('file.json')
 // </pre>
         </div>
         
-        <h4>📝 SAJÁT KÓDOK - 5. JavaScript függvény</h4>
+        <h4>📝 Példa Kód - 5. JavaScript függvény</h4>
         <div class="empty-slot">
             <pre>// IDE JÖN A SAJÁT JS KÓDOD 5.
 // 
@@ -588,7 +588,7 @@ fetch('file.json')
         <ul>
             <li>Minden kategóriában van <strong>5 üres hely</strong> a saját kódjaidnak</li>
             <li>A zöld hátterű részekre <strong>beírhatod/bemásolhatod</strong> a saját függvényeidet</li>
-            <li>Az előre megírt kódok példák, amiket használhatsz</li>
+            <li>Az Kódrészlet példák, amiket használhatsz</li>
             <li>Vizsgán csak megnyitod, és onnan dolgozol</li>
         </ul>
     </div>
