@@ -568,9 +568,117 @@ fetch('file.json')
         
         <h4>📝 SAJÁT KÓDOK - 4. JavaScript függvény</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT JS KÓDOD 4.
-// 
-// 
+            <pre>;(function(window, angular) {
+
+  'use strict';
+
+  // Application module
+  angular.module('app', [
+    'ui.router',
+    'app.common'
+  ])
+
+  // Application config
+  .config([
+    '$stateProvider', 
+    '$urlRouterProvider', 
+    function($stateProvider, $urlRouterProvider) {
+
+      $stateProvider
+      .state('root', {
+        views: {
+          '': {
+            templateUrl: './html/root.html'
+          },
+          'header@root': {
+            templateUrl: './html/header.html'
+          }
+        }
+      })
+			.state('home', {
+				url: '/',
+        parent: 'root',
+				templateUrl: './html/home.html',
+				controller: 'homeController'
+			})
+			.state('movies', {
+				url: '/movies',
+        parent: 'root',
+				templateUrl: './html/movies.html',
+				controller: 'moviesController'
+			});
+      
+      $urlRouterProvider.otherwise('/');
+    }
+  ])
+
+  // Application run
+  .run([
+    '$rootScope',
+    'http',
+    function($rootScope, http) {
+			
+      http.request('./php/getData.php')
+      .then(response => {
+        $rootScope.movies = response;
+        $rootScope.$applyAsync();
+      })
+      .catch(e => console.log(e));
+
+    }
+  ])
+
+  // Home controller
+  .controller('homeController', [
+    '$rootScope',
+    '$scope',
+    'http',
+    function($rootScope, $scope, http) {
+
+      $scope.setModal = (movie) => {
+        $scope.modalTitle = movie ? "MÓDOSÍTÁS" : "ÚJ TÉTEL"
+        $scope.model = movie;
+        $scope.$applyAsync();
+      }
+
+      $scope.save = (type) => {
+        console.log($scope.model);
+        http.request({
+          url: `./php/${type === 'MÓDOSÍTÁS' ? 'update' : 'insert'}Movie.php`,
+          data: $scope.model
+        })
+        .then(response => {
+          $rootScope.movies = response;
+          $rootScope.$applyAsync();
+        })
+        .catch(e => console.log(e));
+      }
+
+      $scope.delete = (id) => {
+        if (!confirm(`Biztossan törölni szeretné a ${id} filmet?`)) return;
+        http.request({
+          url: './php/deleteMovie.php',
+          data: { id: id }
+        })
+        .then(response => {
+          $rootScope.movies = response;
+          $rootScope.$applyAsync();
+        })
+        .catch(e => console.log(e));
+
+      }
+    }
+  ])
+
+  // Movies controller
+  .controller('moviesController', [
+    '$scope',
+    function($scope) {
+      console.log('Movies controller...');
+    }
+  ]);
+
+})(window, angular);
 // </pre>
         </div>
         
