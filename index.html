@@ -408,11 +408,27 @@ $result = $db-&gtexecute($query, $args);</pre>
         
         <h4>📝 SAJÁT KÓDOK - 4. PHP fájl</h4>
         <div class="empty-slot">
-            <pre>&lt;?php
-// IDE JÖN A SAJÁT PHP KÓDOD 4.
-// egyeb.php
+            <pre>&lt?php
 
-?&gt;</pre>
+require_once('../../common/php/environment.php');
+
+$contents = file_get_contents('./db/movies.json');
+
+$data = json_decode($contents, true);
+
+foreach($data as $i => $d) {
+  $data[$i]['szereplok'] = implode(',', $d['szereplok']);
+}
+
+$db = new Database('berta_barnabas');
+
+$query = $db-&gtpreparateInsert('movies', array_keys($data[0]), count($data));
+
+$data = Util::arrayOfAssocArrayToArray($data);
+
+$db->execute($query, $data);
+
+$db = null;</pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 5. PHP fájl</h4>
