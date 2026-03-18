@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizsga kódgyűjtemény - Saját kódokkal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #1e1e1e; color: #fff; padding: 20px; }
+        .nav { margin-bottom: 30px; background: #333; padding: 10px; border-radius: 8px; position: sticky; top: 0; z-index: 100; }
+        .nav a { color: #fff; margin-right: 20px; text-decoration: none; font-weight: bold; cursor: pointer; }
+        .nav a:hover { color: #0dcaf0; }
+        pre { background: #2d2d2d; color: #00ff9c; padding: 15px; border-radius: 8px; border-left: 4px solid #0dcaf0; overflow-x: auto; }
+        h3 { color: #0dcaf0; margin-top: 30px; border-bottom: 1px solid #444; padding-bottom: 8px; }
+        h4 { color: #ffc107; margin-top: 20px; }
+        .tab { display: none; }
+        .tab.active { display: block; }
+        .note { background: #332703; padding: 10px; border-radius: 5px; border-left: 4px solid #ffc107; }
+        .empty-slot { background: #1a3300; padding: 10px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #28a745; }
+        .empty-slot pre { background: #0a1a00; color: #90ee90; border-left-color: #28a745; }
+        .badge { background: #28a745; padding: 3px 8px; border-radius: 12px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h2>📚 Vizsga segédlet - Saját kódokkal feltölthető</h2>
+    <div class="nav">
+        <a onclick="showTab('angular')">🔷 AngularJS (5 üres)</a>
+        <a onclick="showTab('csharp')">🎯 C# WPF (5 üres)</a>
+        <a onclick="showTab('sql')">🗄️ SQL (5 üres)</a>
+        <a onclick="showTab('php')">🐘 PHP (5 üres)</a>
+        <a onclick="showTab('html')">🌐 HTML/Bootstrap (5 üres)</a>
+        <a onclick="showTab('js')">📜 JavaScript (5 üres)</a>
+    </div>
+
+    <!-- ==================== ANGULARJS TAB ==================== -->
+    <div id="angular" class="tab active">
+        <h3>🔷 AngularJS <span class="badge">5 üres hely</span></h3>
+        
+        <!-- Előre megírt kódok -->
+        <h4>📌 Előre megírt kódok:</h4>
+        <pre>angular.module('app', ['ui.router', 'app.common'])
+.config(['$stateProvider', '$urlRouterProvider', function($sp, $url) {
+    $sp
+    .state('root', {
+        views: {
+            '': { templateUrl: './html/root.html' },
+            'header@root': { templateUrl: './html/header.html' }
+        }
+    })
+    .state('home', {
+        url: '/', parent: 'root',
+        templateUrl: './html/home.html',
+        controller: 'homeController'
+    })
+    .state('movies', {
+        url: '/movies', parent: 'root',
+        templateUrl: './html/movies.html',
+        controller: 'moviesController'
+    });
+    $url.otherwise('/');
+}]);</pre>
+        
+        <!-- 5 ÜRES HELY ANGULARHOZ -->
+        <h4>📝 SAJÁT KÓDOK - 1. Angular függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 1.
+// Példá: egyedi controller, service, vagy filter
+// 
+// 
+// Írd ide a kódodat</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 2. Angular függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 2.
+// Példá: watch, event handler, vagy egyedi direktíva
+// 
+// 
+// Írd ide a kódodat</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 3. Angular függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 3.
+// Példá: http kérés, vagy adatfeldolgozás
+// 
+// 
+// Írd ide a kódodat</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 4. Angular függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 4.
+// Példá: scope függvények, vagy számítások
+// 
+// 
+// Írd ide a kódodat</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 5. Angular függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 5.
+// Példá: egyéb hasznos függvény
+// 
+// 
+// Írd ide a kódodat</pre>
+        </div>
+    </div>
+
+    <!-- ==================== C# TAB ==================== -->
+    <div id="csharp" class="tab">
+        <h3>🎯 C# WPF <span class="badge">5 üres hely</span></h3>
+        
+        <h4>📌 Előre megírt kódok:</h4>
+        <pre>using MySql.Data.MySqlClient;
+using System.Data;
+
+public partial class MainWindow : Window
+{
+    MySqlConnection connection = new MySqlConnection("server=localhost;database=games;uid=root");
+    
+    public MainWindow()
+    {
+        InitializeComponent();
+        MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM jatekok", connection);
+        DataTable dt = new DataTable();
+        adapter.Fill(dt);
+        datagrid0.ItemsSource = dt.DefaultView;
+    }
+
+    private void Button_Click_Kilepes(object sender, RoutedEventArgs e)
+    {
+        Application.Current.Shutdown();
+    }
+}</pre>
+        
+        <!-- 5 ÜRES HELY C#-HOZ -->
+        <h4>📝 SAJÁT KÓDOK - 1. C# metódus</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT C# KÓDOD 1.
+// private void SajatFuggveny()
+// {
+//     
+// }</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 2. C# metódus</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT C# KÓDOD 2.
+// private void AdatBetoltes()
+// {
+//     
+// }</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 3. C# metódus</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT C# KÓDOD 3.
+// private void Mentes()
+// {
+//     
+// }</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 4. C# metódus</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT C# KÓDOD 4.
+// private void Torles()
+// {
+//     
+// }</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 5. C# metódus</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT C# KÓDOD 5.
+// private void Kereses()
+// {
+//     
+// }</pre>
+        </div>
+    </div>
+
+    <!-- ==================== SQL TAB ==================== -->
+    <div id="sql" class="tab">
+        <h3>🗄️ SQL <span class="badge">5 üres hely</span></h3>
+        
+        <h4>📌 Előre megírt kódok:</h4>
+        <pre>-- Adatbázis létrehozás
+CREATE DATABASE sajatnev;
+USE sajatnev;
+
+-- Tábla létrehozás
+CREATE TABLE movies (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cim VARCHAR(100) NOT NULL,
+    ev INT,
+    kategoria VARCHAR(50),
+    leiras TEXT
+);</pre>
+        
+        <!-- 5 ÜRES HELY SQL-HEZ -->
+        <h4>📝 SAJÁT KÓDOK - 1. SQL lekérdezés</h4>
+        <div class="empty-slot">
+            <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 1.
+-- 
+-- 
+-- </pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 2. SQL lekérdezés</h4>
+        <div class="empty-slot">
+            <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 2.
+-- 
+-- 
+-- </pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 3. SQL lekérdezés</h4>
+        <div class="empty-slot">
+            <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 3.
+-- 
+-- 
+-- </pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 4. SQL lekérdezés</h4>
+        <div class="empty-slot">
+            <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 4.
+-- 
+-- 
+-- </pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 5. SQL lekérdezés</h4>
+        <div class="empty-slot">
+            <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 5.
+-- 
+-- 
+-- </pre>
+        </div>
+    </div>
+
+    <!-- ==================== PHP TAB ==================== -->
+    <div id="php" class="tab">
+        <h3>🐘 PHP <span class="badge">5 üres hely</span></h3>
+        
+        <h4>📌 Előre megírt kódok:</h4>
+        <pre>&lt;?php
+header('Content-Type: application/json');
+$conn = new mysqli("localhost", "root", "", "sajatnev");
+
+// getData.php
+$result = $conn->query("SELECT * FROM movies");
+$rows = [];
+while($row = $result->fetch_assoc()) {
+    $rows[] = $row;
+}
+echo json_encode($rows);
+?&gt;</pre>
+        
+        <!-- 5 ÜRES HELY PHP-HOZ -->
+        <h4>📝 SAJÁT KÓDOK - 1. PHP fájl</h4>
+        <div class="empty-slot">
+            <pre>&lt;?php
+// IDE JÖN A SAJÁT PHP KÓDOD 1.
+// insert.php
+
+?&gt;</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 2. PHP fájl</h4>
+        <div class="empty-slot">
+            <pre>&lt;?php
+declare(strict_types=1);
+
+// Include environment
+require_once("../../common/php/environment.php");
+
+$args = Util::getArgs();
+
+$db = new Database('odry_attila');
+
+// Set query
+$query = $db->preparateUpdate('movies', array_keys($args), 'id');
+$query .= " WHERE `id` :id"
+
+// Execute SQL command
+$result = $db->execute($query, $args);
+
+// Set query
+$query = "SELECT * FROM `movies`";
+
+// Execute SQL command
+$result = $db->execute($query);
+
+// Close connection
+$db = null;
+
+// Set response
+Util::setResponse($result);
+
+?&gt;</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 3. PHP fájl</h4>
+        <div class="empty-slot">
+            <pre>&lt;?php
+declare(strict_types=1);
+
+// Include environment
+require_once("../../common/php/environment.php");
+
+$args = Util::getArgs();
+
+$db = new Database('odry_attila');
+
+// Set query
+$query = "DELETE FROM `movies` WHERE id = :id";
+
+// Execute SQL command
+$result = $db->execute($query, $args);
+
+// Set query
+$query = "SELECT * FROM `movies`";
+
+// Execute SQL command
+$result = $db->execute($query);
+
+// Close connection
+$db = null;
+
+// Set response
+Util::setResponse($result);</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 4. PHP fájl</h4>
+        <div class="empty-slot">
+            <pre>&lt;?php
+// IDE JÖN A SAJÁT PHP KÓDOD 4.
+// egyeb.php
+
+?&gt;</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 5. PHP fájl</h4>
+        <div class="empty-slot">
+            <pre>&lt;?php
+// IDE JÖN A SAJÁT PHP KÓDOD 5.
+// kapcsolat.php
+
+?&gt;</pre>
+        </div>
+    </div>
+
+    <!-- ==================== HTML TAB ==================== -->
+    <div id="html" class="tab">
+        <h3>🌐 HTML/Bootstrap <span class="badge">5 üres hely</span></h3>
+        
+        <h4>📌 Előre megírt kódok:</h4>
+        <pre>&lt;!-- Bootstrap grid --&gt;
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;!-- tartalom --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        
+        <!-- 5 ÜRES HELY HTML-HEZ -->
+        <h4>📝 SAJÁT KÓDOK - 1. HTML blokk</h4>
+        <div class="empty-slot">
+            <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 1. --&gt;
+&lt;!-- 
+     
+--&gt;</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 2. HTML blokk</h4>
+        <div class="empty-slot">
+            <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 2. --&gt;
+&lt;!-- 
+     
+--&gt;</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 3. HTML blokk</h4>
+        <div class="empty-slot">
+            <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 3. --&gt;
+&lt;!-- 
+     
+--&gt;</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 4. HTML blokk</h4>
+        <div class="empty-slot">
+            <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 4. --&gt;
+&lt;!-- 
+     
+--&gt;</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 5. HTML blokk</h4>
+        <div class="empty-slot">
+            <pre>&lt;!-- IDE JÖN A SAJÁT HTML KÓDOD 5. --&gt;
+&lt;!-- 
+     
+--&gt;</pre>
+        </div>
+    </div>
+
+    <!-- ==================== JS TAB ==================== -->
+    <div id="js" class="tab">
+        <h3>📜 JavaScript <span class="badge">5 üres hely</span></h3>
+        
+        <h4>📌 Előre megírt kódok:</h4>
+        <pre>// Confirm törléshez
+if(confirm("Biztosan?")) {
+    // törlés kódja
+}
+
+// Fetch API
+fetch('file.json')
+    .then(r => r.json())
+    .then(d => console.log(d));</pre>
+        
+        <!-- 5 ÜRES HELY JS-HEZ -->
+        <h4>📝 SAJÁT KÓDOK - 1. JavaScript függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT JS KÓDOD 1.
+// function valami() {
+//     
+// }</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 2. JavaScript függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT JS KÓDOD 2.
+// document.addEventListener('...', function() {
+//     
+// });</pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 3. JavaScript függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT JS KÓDOD 3.
+// 
+// 
+// </pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 4. JavaScript függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT JS KÓDOD 4.
+// 
+// 
+// </pre>
+        </div>
+        
+        <h4>📝 SAJÁT KÓDOK - 5. JavaScript függvény</h4>
+        <div class="empty-slot">
+            <pre>// IDE JÖN A SAJÁT JS KÓDOD 5.
+// 
+// 
+// </pre>
+        </div>
+    </div>
+
+    <div class="note mt-4">
+        <strong>💡 Használati útmutató:</strong> 
+        <ul>
+            <li>Minden kategóriában van <strong>5 üres hely</strong> a saját kódjaidnak</li>
+            <li>A zöld hátterű részekre <strong>beírhatod/bemásolhatod</strong> a saját függvényeidet</li>
+            <li>Az előre megírt kódok példák, amiket használhatsz</li>
+            <li>Vizsgán csak megnyitod, és onnan dolgozol</li>
+        </ul>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
