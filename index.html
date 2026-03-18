@@ -108,20 +108,49 @@
         
         <h4>📝 SAJÁT KÓDOK - 4. Angular függvény</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 4.
-// Példá: scope függvények, vagy számítások
-// 
-// 
-// Írd ide a kódodat</pre>
+            <pre>$scope.delete = (id) => {
+        if (!confirm(`Biztossan törölni szeretné a ${id} filmet?`)) return;
+        http.request({
+          url: './php/deleteMovie.php',
+          data: { id: id }
+        })
+        .then(response => {
+          $rootScope.movies = response;
+          $rootScope.$applyAsync();
+        })
+        .catch(e => console.log(e));
+
+      }
+</pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 5. Angular függvény</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 5.
-// Példá: egyéb hasznos függvény
-// 
-// 
-// Írd ide a kódodat</pre>
+            <pre>// Home controller
+  .controller('homeController', [
+    '$rootScope',
+    '$scope',
+    'http',
+    function($rootScope, $scope, http) {
+
+      $scope.setModal = (movie) => {
+        $scope.modalTitle = movie ? "MÓDOSÍTÁS" : "ÚJ TÉTEL"
+        $scope.model = movie;
+        $scope.$applyAsync();
+      }
+
+      $scope.save = (type) => {
+        console.log($scope.model);
+        http.request({
+          url: `./php/${type === 'MÓDOSÍTÁS' ? 'update' : 'insert'}Movie.php`,
+          data: $scope.model
+        })
+        .then(response => {
+          $rootScope.movies = response;
+          $rootScope.$applyAsync();
+        })
+        .catch(e => console.log(e));
+      }</pre>
         </div>
     </div>
 
