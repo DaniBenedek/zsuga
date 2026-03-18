@@ -62,29 +62,48 @@
         <!-- 5 ÜRES HELY ANGULARHOZ -->
         <h4>📝 SAJÁT KÓDOK - 1. Angular függvény</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 1.
-// Példá: egyedi controller, service, vagy filter
-// 
-// 
-// Írd ide a kódodat</pre>
+            <pre>
+                ng-model="model.name"
+
+                ng-disabled="$formneve.$invalid"
+
+                ng-repeat="x in movies track by $index"
+
+
+                ng-click 
+                ng-change 
+                ng-if
+                ng-show
+                ng-class 
+                ng-app 
+                ng-controller 
+                ng-init 
+            </pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 2. Angular függvény</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 2.
-// Példá: watch, event handler, vagy egyedi direktíva
-// 
-// 
-// Írd ide a kódodat</pre>
+            <pre>
+                $scope.$applyAsync();
+            </pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 3. Angular függvény</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT ANGULAR KÓDOD 3.
-// Példá: http kérés, vagy adatfeldolgozás
-// 
-// 
-// Írd ide a kódodat</pre>
+            <pre>          http.request({
+            url: './php/put.php',
+            data: {id: $scope.currendModifyId,
+                    ...$scope.model}
+          })
+          .then(res => {
+            console.log(res)
+            if(res.affectedRows)
+              alert("Sikeres Művelet");
+            else
+              alert("Sikertelen művelet");
+
+            getData();
+          })</pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 4. Angular függvény</h4>
