@@ -245,92 +245,48 @@ CREATE TABLE movies (
         <h3>🐘 PHP <span class="badge">5 üres hely</span></h3>
         
         <h4>📌 Előre megírt kódok:</h4>
-        <pre>&lt;?php
-header('Content-Type: application/json');
-$conn = new mysqli("localhost", "root", "", "sajatnev");
+        <pre>&lt?php
+            declare(strict_types=1);
 
-// getData.php
-$result = $conn->query("SELECT * FROM movies");
-$rows = [];
-while($row = $result->fetch_assoc()) {
-    $rows[] = $row;
-}
-echo json_encode($rows);
-?&gt;</pre>
+            require_once("./environment.php");
+
+            $args = Util::getArgs();
+
+            $db = new Database(); 
+
+            $query = "";
+
+            $result = $db-&ltexecute($query, $args);
+
+            $db = null;
+
+            Util::setResponse($result);
+        </pre>
         
         <!-- 5 ÜRES HELY PHP-HOZ -->
         <h4>📝 SAJÁT KÓDOK - 1. PHP fájl</h4>
         <div class="empty-slot">
-            <pre>&lt;?php
-// IDE JÖN A SAJÁT PHP KÓDOD 1.
-// insert.php
+            <pre>$query = $db-&gtpreparateInsert('movies', array_keys($args));
+
+$result = $db-&gtexecute($query, array_values($args));
 
 ?&gt;</pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 2. PHP fájl</h4>
         <div class="empty-slot">
-            <pre>&lt;?php
-declare(strict_types=1);
+            <pre>
+$query = $db-&gtpreparateUpdate('movies', array_keys($args), 'id');
+$query .= " WHERE `id` = :id";
 
-// Include environment
-require_once("../../common/php/environment.php");
-
-$args = Util::getArgs();
-
-$db = new Database('odry_attila');
-
-// Set query
-$query = $db->preparateUpdate('movies', array_keys($args), 'id');
-$query .= " WHERE `id` :id"
-
-// Execute SQL command
-$result = $db->execute($query, $args);
-
-// Set query
-$query = "SELECT * FROM `movies`";
-
-// Execute SQL command
-$result = $db->execute($query);
-
-// Close connection
-$db = null;
-
-// Set response
-Util::setResponse($result);
-
-?&gt;</pre>
+$result = $db-&gtexecute($query, $args);</pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 3. PHP fájl</h4>
         <div class="empty-slot">
-            <pre>&lt;?php
-declare(strict_types=1);
+            <pre>$query = "DELETE FROM movies WHERE id=:id";
 
-// Include environment
-require_once("../../common/php/environment.php");
-
-$args = Util::getArgs();
-
-$db = new Database('odry_attila');
-
-// Set query
-$query = "DELETE FROM `movies` WHERE id = :id";
-
-// Execute SQL command
-$result = $db->execute($query, $args);
-
-// Set query
-$query = "SELECT * FROM `movies`";
-
-// Execute SQL command
-$result = $db->execute($query);
-
-// Close connection
-$db = null;
-
-// Set response
-Util::setResponse($result);</pre>
+$result = $db-&gtexecute($query, $args);</pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 4. PHP fájl</h4>
