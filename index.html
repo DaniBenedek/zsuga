@@ -201,7 +201,9 @@ CREATE TABLE movies (
         <!-- 5 ÜRES HELY SQL-HEZ -->
         <h4>📝 SAJÁT KÓDOK - 1. SQL lekérdezés</h4>
         <div class="empty-slot">
-            <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 1.
+            <pre>SELECT Users.nev, Orders.termek
+FROM Users
+INNER JOIN Orders ON Users.id = Orders.user_id;
 -- 
 -- 
 -- </pre>
