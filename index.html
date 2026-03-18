@@ -164,11 +164,107 @@ public partial class MainWindow : Window
         
         <h4>📝 SAJÁT KÓDOK - 3. C# metódus</h4>
         <div class="empty-slot">
-            <pre>// IDE JÖN A SAJÁT C# KÓDOD 3.
-// private void Mentes()
-// {
-//     
-// }</pre>
+            <pre>using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tvk
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader sr = new StreamReader("televiziok.txt", encoding: Encoding.Default);
+            List<Beolvas> Adatok = new List<Beolvas>();
+            string Fejlec = sr.ReadLine();
+            while (!sr.EndOfStream)
+            {
+                Adatok.Add(new Beolvas(sr.ReadLine()));
+            }
+            //3.
+            Console.WriteLine($"3. feladat: ossz {Adatok.Count} db eszkoz van a listan");
+
+            //4.
+            int min = Adatok[0].Gyartasi_ev;
+            foreach (var item in Adatok)
+            {
+                if (item.Gyartasi_ev < min)
+                {
+                    min = item.Gyartasi_ev;
+                }
+            }
+            Console.WriteLine($"4. feladat: legregebbi tv gyartasi eve: {min}");
+
+            //5.
+            Adatok.RemoveAll(x => x.Raktarkeszlet == 0);
+
+            //6.
+            var tipusok = Adatok.Select(x => x.Tipus).Distinct().Count();
+            Console.WriteLine($"6. feladat: raktaron levo tv fajtainak szama: {tipusok} fele");
+
+            //7.
+            int osszAr = 0;
+            foreach (var item in Adatok)
+            {
+                osszAr += item.Ar * item.Raktarkeszlet;
+            }
+            Console.WriteLine($"7. feladat: raktarkeszlet ara: {osszAr} Ft");
+
+            //8.
+            int minAr = Adatok[0].Ar;
+            int maxAr = Adatok[0].Ar;
+            foreach (var item in Adatok)
+            {
+                if (item.Ar < minAr)
+                {
+                    minAr = item.Ar;
+                }
+                if (item.Ar > maxAr)
+                {
+                    maxAr = item.Ar;
+                }
+            }
+            Console.WriteLine($"8. feladat: legolcsobb: {minAr} Ft legdragabb: {maxAr} Ft");
+
+            //9. 
+            Console.WriteLine($"9. feladat:");
+            var smarttv = Adatok.FindAll(x => x.Tulajdonsag == "SMART");
+            smarttv.ForEach(x => Console.WriteLine($"{x.Gyarto} {x.Tipus} {x.Ar}"));
+
+            Console.ReadKey();
+        }
+        class Beolvas
+        {
+            public int Gyartasi_ev { get; set; }
+            public string Gyarto { get; set; }
+            public string Tipus { get; set; }
+            public int Kepatlo { get; set; }
+            public string Kepernyo_Tipus { get; set; }
+            public string Max_Felbontas { get; set; }
+            public string Tulajdonsag { get; set; }
+            public int Ar { get; set; }
+            public int Raktarkeszlet { get; set; }
+            public Beolvas(string sor)
+            {
+                string[] darabol = sor.Split(';');
+                Gyartasi_ev = int.Parse(darabol[0]);
+                Gyarto = darabol[1];
+                Tipus = darabol[2];
+                Kepatlo = int.Parse(darabol[3]);
+                Kepernyo_Tipus = darabol[4];
+                Max_Felbontas = darabol[5];
+                Tulajdonsag = darabol[6];
+                Ar = int.Parse(darabol[7]);
+                Raktarkeszlet = int.Parse(darabol[8]);
+            }
+        }
+    }
+}
+   
+// </pre>
         </div>
         
         <h4>📝 SAJÁT KÓDOK - 4. C# metódus</h4>
@@ -211,7 +307,9 @@ CREATE TABLE movies (
         <!-- 5 ÜRES HELY SQL-HEZ -->
         <h4>📝 SAJÁT KÓDOK - 1. SQL lekérdezés</h4>
         <div class="empty-slot">
-            <pre>-- IDE JÖN A SAJÁT SQL KÓDOD 1.
+            <pre>SELECT Users.nev, Orders.termek
+FROM Users
+INNER JOIN Orders ON Users.id = Orders.user_id;
 -- 
 -- 
 -- </pre>
